@@ -279,6 +279,7 @@ void ExpMultiKartSelect::BeforeControlUpdate() {
     }
 
 }
+//Note: This should prevent it from picking a drift type when randomizing
 
 //void DriftSelectBeforeControlUpdate(Pages::DriftSelect* driftSelect) {
 //    ExpCharacterSelect* charSelect = SectionMgr::sInstance->curSection->Get<ExpCharacterSelect>();

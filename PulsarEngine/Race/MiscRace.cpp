@@ -94,83 +94,81 @@ kmCall(0x807ef444, ChangeItemWindowPane);
 
 kmWrite24(0x808A9FF3, 'PUL');
 
-    // Dont Lose VR when Disconnecting [Bully]
-    // kmWrite16(0x04856560, 0x60000000);
 
-    // Hybrid Drift v2 [CLF78, Ismy]
-    asmFunc HybridDrift1() {
-        ASM(
-    lwz r0, 0x14(r3);
-    lwz r12, 0(r28);
-    lwz r12, 0(r12);
-    lwz r12, 0x14(r12);
-    lwz r12, 0(r12);
-    lwz r12, 0x4(r12);
-    cmpwi r12, 2;
-    beqlr;
-    li r0, 0;
-    blr;
-        )
-    }
-    kmCall(0x8057930C, HybridDrift1);
-    kmCall(0x80578DCC, HybridDrift1);
+// Hybrid Drift v2 [CLF78, Ismy]
+asmFunc HybridDrift1() {
+    ASM(
+lwz r0, 0x14(r3);
+lwz r12, 0(r28);
+lwz r12, 0(r12);
+lwz r12, 0x14(r12);
+lwz r12, 0(r12);
+lwz r12, 0x4(r12);
+cmpwi r12, 2;
+beqlr;
+li r0, 0;
+blr;
+    )
+}
+kmCall(0x8057930C, HybridDrift1);
+kmCall(0x80578DCC, HybridDrift1);
 
-    asmFunc HybridDrift3() {
-        ASM(
-    lwz r0, 0x14(r3);
-    rlwinm. r12, r0, 0, 18, 18;
-    beq end2;
-    ori r0, r0, 0x10;
-    stw r0, 0x14(r3);
-    end2:
-    lwz r0, 0x4(r3);
-    blr;
-        )
-    }
-    kmCall(0x8057DFA8, HybridDrift3);
+asmFunc HybridDrift3() {
+    ASM(
+lwz r0, 0x14(r3);
+rlwinm. r12, r0, 0, 18, 18;
+beq end2;
+ori r0, r0, 0x10;
+stw r0, 0x14(r3);
+end2:
+lwz r0, 0x4(r3);
+blr;
+    )
+}
+kmCall(0x8057DFA8, HybridDrift3);
 
-    asmFunc HybridDrift4() {
-        ASM(
-    lwz r0, 0x14(r4);
-    rlwinm. r12, r0, 0, 18, 18;
-    beq end2;
-    ori r0, r0, 0x10;
-    stw r0, 0x14(r4);
-    end2:
-    lwz r0, 0x4(r4);
-    blr;
-        )
-    }
-    kmCall(0x8057E018, HybridDrift4);
+asmFunc HybridDrift4() {
+    ASM(
+lwz r0, 0x14(r4);
+rlwinm. r12, r0, 0, 18, 18;
+beq end2;
+ori r0, r0, 0x10;
+stw r0, 0x14(r4);
+end2:
+lwz r0, 0x4(r4);
+blr;
+    )
+}
+kmCall(0x8057E018, HybridDrift4);
 
-    asmFunc HybridDrift6() {
-        ASM(
-      rlwinm.   r0,r0,0,27,27;
-      li        r0, 0;
-      stw       r0, 0x1C8(r3);
-        )
-    }
-    kmCall(0x8057E108, HybridDrift6);
+asmFunc HybridDrift6() {
+    ASM(
+  rlwinm.   r0,r0,0,27,27;
+  li        r0, 0;
+  stw       r0, 0x1C8(r3);
+    )
+}
+kmCall(0x8057E108, HybridDrift6);
 
-    asmFunc HybridDrift7() {
-        ASM(
-    lwz r3, 0x4(r30);
-    andi. r4, r3, 0x84;
-    beq end;
-    lwz r4, 0x14(r30);
-    rlwinm r4, r4, 0, 28, 26;
-    stw r4, 0x14(r30);
-    rlwinm r3, r3, 0, 4, 2;
-    stw r3, 0x4(r30);
-    end:
-    mr r3, r30;
-    blr;
-        )
-    }
-    kmCall(0x80594AA8, HybridDrift7);
-    kmWrite8(0x8059450E, 0x00000020);
-    kmWrite32(0x80594A60, 0x60000000);
-    kmWrite32(0x805A35BC, 0x38600000);
-    kmWrite16(0x80745AB0, 0x00004800);
+asmFunc HybridDrift7() {
+    ASM(
+lwz r3, 0x4(r30);
+andi. r4, r3, 0x84;
+beq end;
+lwz r4, 0x14(r30);
+rlwinm r4, r4, 0, 28, 26;
+stw r4, 0x14(r30);
+rlwinm r3, r3, 0, 4, 2;
+stw r3, 0x4(r30);
+end:
+mr r3, r30;
+blr;
+    )
+}
+kmCall(0x80594AA8, HybridDrift7);
+kmWrite8(0x8059450E, 0x00000020);
+kmWrite32(0x80594A60, 0x60000000);
+kmWrite32(0x805A35BC, 0x38600000);
+kmWrite16(0x80745AB0, 0x00004800);
 }//namespace Race
 }//namespace Pulsar

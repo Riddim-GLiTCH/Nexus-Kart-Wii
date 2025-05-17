@@ -148,7 +148,7 @@ const char System::breff[] = "/Effect/Pulsar.breff";
 const char System::breft[] = "/Effect/Pulsar.breft";
 const char* System::ttModeFolders[] ={ "150", "200", "150F", "200F" };
 
-    // Change the Default Drift Type [CLF78]
-    kmWrite32(0x8054636C, 0x38600002);
+// Change the Default Drift Type [CLF78]
+kmWrite32(0x8054636C, 0x38600002);
 
 }//namespace Pulsar
