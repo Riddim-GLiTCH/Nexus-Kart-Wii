@@ -312,7 +312,7 @@ void MultiDriftSelectBeforeControlUpdate(Pages::MultiDriftSelect* multiDriftSele
         charSelect->rouletteCounter = -1;
     }
 }
-kmWritePointer(0x808D9C10, MultiDriftSelectBeforeControlUpdate);
+// kmWritePointer(0x808D9C10, MultiDriftSelectBeforeControlUpdate);
 
 void AddCharSelectLayer(Pages::CountDownTimer* page, PageId id, u32 r5) {
     const ExpVR* votingPage = SectionMgr::sInstance->curSection->Get<ExpVR>(); //always present when 0x90 is present

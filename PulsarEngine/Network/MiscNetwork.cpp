@@ -67,5 +67,9 @@ static void SetTeams(CustomSELECTHandler* handler, u32& teams) {
 }
 kmCall(0x806619d8, SetTeams);
 
+
+    
+    // Dont Lose VR when Disconnecting [Bully]
+    kmWrite32(0x80856560, 0x60000000);
 }//namespace Network
 }//namespace Pulsar
