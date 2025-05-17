@@ -1,3 +1,7 @@
+# Nexus Kart Wii
+
+Nexus Kart Wii is a mod for Mario Kart Wii based on Pulsar.
+
 # Pulsar
 
 Pulsar is a Mario Kart Wii Kamek-Based engine to create CT distributions. It comes with its own [software](../main/PulsarPackCreator/Executable) to aid in building custom distributions, and multiple quality of life features:
