@@ -170,5 +170,69 @@ kmWrite8(0x8059450E, 0x00000020);
 kmWrite32(0x80594A60, 0x60000000);
 kmWrite32(0x805A35BC, 0x38600000);
 kmWrite16(0x80745AB0, 0x00004800);
+
+// Kill Lakitu [JoshuaMK]
+kmWrite32(0x80554BFC, 0x60000000);
+
+// Character Minimap Rotation [_Ro] (Ported by THF)
+asmFunc MinimapRotation1() {
+  lwz       r0, 0x38(r3);
+  cmpwi     r0, 0;
+  bne-      loc_0x14;
+  li        r12, 0x1;
+  stb       r12, 0x5(r28);
+
+loc_0x14:
+  lbz       r12, 0x4(r28);
+  cmpwi     r12, 0x2;
+  bge-      loc_0x2C;
+  addi      r12, r12, 0x1;
+  stb       r12, 0x4(r28);
+  blt-      loc_0x30;
+
+loc_0x2C:
+  li        r0, 0;
+
+loc_0x30:
+
+
+}
+/* kmCall(0x807EB550, MinimapRotation1);
+
+extern "C" void MinimapCode1(void*);
+asmFunc MinimapRotation2() {
+loc_0x0:
+  stfs f1, 64(r3);
+  lbz r12, 4(r28);
+  cmpwi r12, 0x2;
+  blt- loc_0x4C;
+  lwz r3, 440(r28);
+  stfs f1, 64(r3);
+  lwz r3, 444(r28);
+  stfs f1, 64(r3);
+  lwz r3, 448(r28);
+  stfs f1, 64(r3);
+  lbz r4, 436(r28);
+  lbz r12, 5(r28);
+  cmpwi r12, 0x1;
+  beq- loc_0x3C;
+  addi r31, r31, 0x8;
+
+loc_0x3C:
+  lis r12, MinimapCode1@h;
+  ori r12, r12, MinimapCode1@l;
+  mtctr r12;
+  blr;
+
+loc_0x4C:
+
+
+}
+kmCall(0x807EB660, MinimapRotation2); */
+
+
+//No Bullet Bill Cancel When Touching Bottom of Rainbow Road [Ro]
+kmWrite32(0x8059BE30, 0x60000000);
+
 }//namespace Race
 }//namespace Pulsar

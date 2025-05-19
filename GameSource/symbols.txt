@@ -1718,3 +1718,4 @@ StateGX_ChangeProjectionv= 0x802417fc
 TPLGetGXTexObjFromPalette= 0x801b7544
 
 WWFC_CUSTOM_REGION = 0x80005efc
+MinimapCode1= 0x807EB69C

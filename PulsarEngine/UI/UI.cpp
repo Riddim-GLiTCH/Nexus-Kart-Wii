@@ -116,6 +116,7 @@ const wchar_t* GetCustomMsg(s32 bmgId) {
     return GetMsgByMsgIdx(bmg, GetMsgIdxById(bmg, bmgId));
 }
 
-
+//Live View Shadow Bug Fix
+kmWrite32(0x807eb988, 0x807c01c0);
 }//namespace UI
 }//namespace Pulsar
