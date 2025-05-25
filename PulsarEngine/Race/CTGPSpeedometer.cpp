@@ -1,3 +1,4 @@
+// CTGP Speedometer port by Kazuki
 #include <UI/CtrlRaceBase/Speedometer.hpp>
 #include <Settings/Settings.hpp>
 
