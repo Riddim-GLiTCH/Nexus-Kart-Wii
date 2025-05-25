@@ -197,38 +197,7 @@ loc_0x30:
 
 
 }
-/* kmCall(0x807EB550, MinimapRotation1);
 
-extern "C" void MinimapCode1(void*);
-asmFunc MinimapRotation2() {
-loc_0x0:
-  stfs f1, 64(r3);
-  lbz r12, 4(r28);
-  cmpwi r12, 0x2;
-  blt- loc_0x4C;
-  lwz r3, 440(r28);
-  stfs f1, 64(r3);
-  lwz r3, 444(r28);
-  stfs f1, 64(r3);
-  lwz r3, 448(r28);
-  stfs f1, 64(r3);
-  lbz r4, 436(r28);
-  lbz r12, 5(r28);
-  cmpwi r12, 0x1;
-  beq- loc_0x3C;
-  addi r31, r31, 0x8;
-
-loc_0x3C:
-  lis r12, MinimapCode1@h;
-  ori r12, r12, MinimapCode1@l;
-  mtctr r12;
-  blr;
-
-loc_0x4C:
-
-
-}
-kmCall(0x807EB660, MinimapRotation2); */
 
 
 //No Bullet Bill Cancel When Touching Bottom of Rainbow Road [Ro]

@@ -68,31 +68,10 @@ wchar_t* GetMsgByMsgIdx(const BMGHolder& bmg, s32 msgIdx) {
 }
 
 wchar_t* GetMsg(const BMGHolder& normalHolder, s32 msgIdx) {
-    /*
-    wchar_t* ret = nullptr;
-    if(isCustom) ret = GetMsgByMsgIdx(System::sInstance->GetBMG(), msgIdx);
-    if(ret == nullptr) ret = GetMsgByMsgIdx(normalHolder, msgIdx);
-    return ret;
-    */
-
-    /*if(isCustom == CUP_TEXT) {
-        CupsConfig* config = CupsConfig::sInstance;
-        u32 idx = isCustom & 0xFFFF;
-        switch((isCustom & ~0xFFFF) >> 13) {
-            case(1):
-                return config->GetCupName(static_cast<PulsarCupId>(idx));
-            case(2):
-                return config->GetTrackName(static_cast<PulsarId>(idx));
-            case(3):
-                return config->GetTrackAuthor(static_cast<PulsarId>(idx));
-        }
-    }
-    else {*/
     wchar_t* ret = nullptr;
     if(isCustom == CUSTOM_BMG) ret = GetMsgByMsgIdx(System::sInstance->GetBMG(), msgIdx);
     if(ret == nullptr) ret = GetMsgByMsgIdx(normalHolder, msgIdx);
     return ret;
-    //}
 }
 kmBranch(0x805f8cf0, GetMsg);
 
@@ -104,7 +83,6 @@ const u8* GetFontIndex(const BMGHolder& bmg, s32 msgIdx) {
 
 const u8* GetFont(const BMGHolder& normalHolder, s32 msgIdx) {
     const u8* ret = nullptr;
-    //if(isCustom == CUP_TEXT) msgIdx = 0;
     if(isCustom == CUSTOM_BMG) ret = GetFontIndex(System::sInstance->GetBMG(), msgIdx);
     if(ret == nullptr) ret = GetFontIndex(normalHolder, msgIdx);
     return ret;
