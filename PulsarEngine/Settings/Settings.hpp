@@ -14,7 +14,8 @@ namespace Settings {
 enum Type {
     SETTINGSTYPE_MENU,
     SETTINGSTYPE_RACE,
-    SETTINGSTYPE_HOST
+    SETTINGSTYPE_HOST,
+    SETTINGSTYPE_NEXUS
 };
 
 enum SectionIndexes {
@@ -333,6 +334,10 @@ enum HostSettings {
     SETTINGHOST_SCROLL_GP_RACES = 0 + 6
 };
 
+enum NexusSettings {
+    TOGGLE_MEGA_TC = 0,
+};
+
 //MENU SETTINGS
 enum MenuSettingFastMenus {
     MENUSETTING_FASTMENUS_DISABLED = 0x0,
@@ -420,5 +425,12 @@ enum HostSettingGPRACES {
     HOSTSETTING_GP_RACES_2,
     //space for a 7th setting is available
 };
+
+//Nexus SETTINGS
+enum ToggleMegaTC {
+    TOGGLE_MEGA_TC_DISABLED,
+    TOGGLE_MEGA_TC_ENABLED
+};
+
 
 #endif

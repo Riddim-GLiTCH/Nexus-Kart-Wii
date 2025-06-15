@@ -1,5 +1,5 @@
 // CTGP Speedometer port by Kazuki
-#include <UI/CtrlRaceBase/Speedometer.hpp>
+#include <Race/CTGPSpeedometer.hpp>
 #include <Settings/Settings.hpp>
 
 namespace Pulsar {
