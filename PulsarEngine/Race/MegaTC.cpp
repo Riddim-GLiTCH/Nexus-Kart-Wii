@@ -8,7 +8,7 @@ namespace Pulsar {
 namespace Race {
 //Mega TC
 void MegaTC(Kart::Movement& movement, int frames, int unk0, int unk1) {
-    if(Info::IsMegaTC() && Settings::Mgr::GetSettingValue(Settings::SETTINGSTYPE_BULSHIT, SETTINGBULSHIT_RADIO_BULSHIT) == 1) movement.ActivateMega();
+    if(Info::IsMegaTC() && Settings::Mgr::GetSettingValue(Settings::SETTINGSTYPE_NEXUS, TOGGLE_MEGA_TC) == 1) movement.ActivateMega();
     else movement.ApplyLightningEffect(frames, unk0, unk1);
 }
 kmCall(0x80580630, MegaTC);

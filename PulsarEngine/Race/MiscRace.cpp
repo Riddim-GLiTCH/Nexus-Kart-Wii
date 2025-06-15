@@ -83,7 +83,7 @@ const char* ChangeItemWindowPane(ItemId id, u32 itemCount) {
         else if(itemCount == 3) paneName = "feather_3";
         else paneName = "feather";
     }
-    else if(id == THUNDER_CLOUD && megaTC && Settings::Mgr::GetSettingValue(Settings::SETTINGSTYPE_BULSHIT, SETTINGBULSHIT_RADIO_BULSHIT) == 1) paneName = "megaTC";
+    else if(id == THUNDER_CLOUD && megaTC && Settings::Mgr::GetSettingValue(Settings::SETTINGSTYPE_NEXUS, TOGGLE_MEGA_TC) == 1) paneName = "megaTC";
     else paneName = GetItemIconPaneName(id, itemCount);
     return paneName;
 }
